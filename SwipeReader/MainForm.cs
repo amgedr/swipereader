@@ -23,6 +23,7 @@ namespace SwipeReader
 
         //the list of ConnectorForm objects. 1 per device
         private Dictionary<string, ConnectorForm> devicesList = new Dictionary<string, ConnectorForm>();
+        public Dictionary<string, AttendanceTable> tablesList = new Dictionary<string, AttendanceTable>();
 
         //when should the synchronization start
         private int syncHour = Properties.Settings.Default.SyncHour;
@@ -53,7 +54,7 @@ namespace SwipeReader
             //Fill devicesGridView manually
             foreach (SwipeReaderDataSet.DevicesRow dev in devicesTable.Rows)
             {
-                devicesDataGridView.Rows.Add(dev.IpAddress, dev.IsLaborDevice, "");
+                devicesDataGridView.Rows.Add(dev.IpAddress, dev.IsLaborDevice, "", dev.LocationId);
             }
 
             //deselect the first row
@@ -119,6 +120,8 @@ namespace SwipeReader
                         row.Cells[2].Value = "Connected";
                         DisplayTransaction("Connected to " + ip);
                         devicesList.Add(ip, connector);
+                        tablesList.Add(ip, 
+                            new AttendanceTable((bool)row.Cells[1].Value, (int)row.Cells[3].Value));
                     }
                     else
                     {
@@ -142,6 +145,7 @@ namespace SwipeReader
                 }
 
                 devicesList.Clear();
+                tablesList.Clear();
 
                 connectButton.Enabled = true;
                 connectButton.Text = "Connect";

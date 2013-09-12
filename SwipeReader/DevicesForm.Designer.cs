@@ -239,11 +239,12 @@
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "IsLaborDevice";
-            this.dataGridViewCheckBoxColumn1.FalseValue = "0";
+            this.dataGridViewCheckBoxColumn1.FalseValue = "False";
             this.dataGridViewCheckBoxColumn1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.dataGridViewCheckBoxColumn1.HeaderText = "For Labors";
+            this.dataGridViewCheckBoxColumn1.IndeterminateValue = "";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.TrueValue = "1";
+            this.dataGridViewCheckBoxColumn1.TrueValue = "True";
             this.dataGridViewCheckBoxColumn1.Width = 80;
             // 
             // dataGridViewTextBoxColumn3

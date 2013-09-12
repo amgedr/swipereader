@@ -39,9 +39,6 @@
             this.syncButton = new System.Windows.Forms.Button();
             this.settingsButton = new System.Windows.Forms.Button();
             this.devicesDataGridView = new System.Windows.Forms.DataGridView();
-            this.ipAddressColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isLaborDeviceColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.statusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.devicesContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.recordCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sDKVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +46,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataSyncTimer = new System.Windows.Forms.Timer(this.components);
+            this.ipAddressColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isLaborDeviceColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.statusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.locationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.devicesDataGridView)).BeginInit();
             this.devicesContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -146,7 +147,8 @@
             this.devicesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ipAddressColumn,
             this.isLaborDeviceColumn,
-            this.statusColumn});
+            this.statusColumn,
+            this.locationColumn});
             this.devicesDataGridView.ContextMenuStrip = this.devicesContextMenuStrip;
             this.devicesDataGridView.Location = new System.Drawing.Point(12, 49);
             this.devicesDataGridView.Name = "devicesDataGridView";
@@ -157,28 +159,6 @@
             this.devicesDataGridView.Size = new System.Drawing.Size(434, 128);
             this.devicesDataGridView.TabIndex = 1;
             this.devicesDataGridView.TabStop = false;
-            // 
-            // ipAddressColumn
-            // 
-            this.ipAddressColumn.Frozen = true;
-            this.ipAddressColumn.HeaderText = "IP Address";
-            this.ipAddressColumn.Name = "ipAddressColumn";
-            this.ipAddressColumn.ReadOnly = true;
-            this.ipAddressColumn.Width = 90;
-            // 
-            // isLaborDeviceColumn
-            // 
-            this.isLaborDeviceColumn.HeaderText = "For Labors";
-            this.isLaborDeviceColumn.Name = "isLaborDeviceColumn";
-            this.isLaborDeviceColumn.ReadOnly = true;
-            this.isLaborDeviceColumn.Width = 75;
-            // 
-            // statusColumn
-            // 
-            this.statusColumn.HeaderText = "Status";
-            this.statusColumn.Name = "statusColumn";
-            this.statusColumn.ReadOnly = true;
-            this.statusColumn.Width = 240;
             // 
             // devicesContextMenuStrip
             // 
@@ -241,6 +221,35 @@
             this.dataSyncTimer.Interval = 3000;
             this.dataSyncTimer.Tick += new System.EventHandler(this.dataSyncTimer_Tick);
             // 
+            // ipAddressColumn
+            // 
+            this.ipAddressColumn.Frozen = true;
+            this.ipAddressColumn.HeaderText = "IP Address";
+            this.ipAddressColumn.Name = "ipAddressColumn";
+            this.ipAddressColumn.ReadOnly = true;
+            this.ipAddressColumn.Width = 90;
+            // 
+            // isLaborDeviceColumn
+            // 
+            this.isLaborDeviceColumn.HeaderText = "For Labors";
+            this.isLaborDeviceColumn.Name = "isLaborDeviceColumn";
+            this.isLaborDeviceColumn.ReadOnly = true;
+            this.isLaborDeviceColumn.Width = 75;
+            // 
+            // statusColumn
+            // 
+            this.statusColumn.HeaderText = "Status";
+            this.statusColumn.Name = "statusColumn";
+            this.statusColumn.ReadOnly = true;
+            this.statusColumn.Width = 240;
+            // 
+            // locationColumn
+            // 
+            this.locationColumn.HeaderText = "Location";
+            this.locationColumn.Name = "locationColumn";
+            this.locationColumn.ReadOnly = true;
+            this.locationColumn.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,9 +287,6 @@
         private System.Windows.Forms.Button downloadButton;
         private System.Windows.Forms.ToolTip toolTips;
         private System.Windows.Forms.Button deviceButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ipAddressColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isLaborDeviceColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusColumn;
         private System.Windows.Forms.TextBox statusTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -289,6 +295,10 @@
         private System.Windows.Forms.ToolStripMenuItem recordCountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sDKVersionToolStripMenuItem;
         private System.Windows.Forms.Timer dataSyncTimer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ipAddressColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isLaborDeviceColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn locationColumn;
     }
 }
 

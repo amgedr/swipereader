@@ -78,11 +78,11 @@ namespace SwipeReader
             _owner.DisplayTransaction(string.Format("{0}: Transaction by user {1}. AttState: {2}",
                 _ipAddress, e.enrollNumber, e.attState));
 
-            //// Write the string to a file.
-            //System.IO.StreamWriter file = new System.IO.StreamWriter(Application.StartupPath + "\\test.txt", true);
-            //file.WriteLine("{0}:{1}:{2} {3}/{4}/{5} - IP: {11}, EnrollNumber: {6}, VerifyMethod: {7}, WorkCode: {8}, IsInValid: {9}, AttState: {10}",
-            //    e.hour, e.minute, e.second, e.day, e.month, e.year, e.enrollNumber, e.verifyMethod, e.workCode, e.isInValid, e.attState, _ipAddress);
-            //file.Close();
+            //save the transaction in attendance table
+            var time = String.Format("{0}-{1}-{2} {3}:{4}:{5}", 
+                e.year, e.month, e.day, e.hour, e.minute, e.second);
+            
+            _owner.tablesList[_ipAddress].SaveAttendanceRecord(e.enrollNumber, time, e.attState, e.verifyMethod);
         }
 
         private void cardReader_OnAttTransaction(object sender, Axzkemkeeper._IZKEMEvents_OnAttTransactionEvent e)
