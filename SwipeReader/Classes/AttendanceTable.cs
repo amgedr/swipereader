@@ -55,7 +55,6 @@ namespace SwipeReader
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.ExecuteNonQuery();
             }
-            //catch (MySqlException) { }
             catch (Exception)
             {
                 throw;

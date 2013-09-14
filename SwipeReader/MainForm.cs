@@ -106,7 +106,7 @@ namespace SwipeReader
         {
             if (connectButton.Text == "Connect")
             {
-                connectButton.Enabled = false;
+                DisableUI(true);
 
                 //loop through the datagrid's rows
                 foreach (DataGridViewRow row in devicesDataGridView.Rows)
@@ -131,12 +131,12 @@ namespace SwipeReader
                     }
                 }
 
-                connectButton.Enabled = true;
                 connectButton.Text = "Disconnect";
+                DisableUI(false);
             }
             else
             {
-                connectButton.Enabled = false;
+                DisableUI(true);
 
                 foreach (var connector in devicesList)
                 {
@@ -147,8 +147,8 @@ namespace SwipeReader
                 devicesList.Clear();
                 tablesList.Clear();
 
-                connectButton.Enabled = true;
                 connectButton.Text = "Connect";
+                DisableUI(false);
             }
         }
 
@@ -213,8 +213,8 @@ namespace SwipeReader
         }
 
         private void downloadButton_Click(object sender, EventArgs e)
-        {            
-            downloadButton.Enabled = false;
+        {
+            DisableUI(true);            
 
             foreach (var d in devicesList)
             {
@@ -224,10 +224,37 @@ namespace SwipeReader
             if (connectButton.Text == "Connect")
             {
                 connectButton_Click(null, null);  //will disconnect the devices
-                connectButton_Click(null, null);  //will reconnect them
+                connectButton_Click(null, null);  //will reconnect them agian
             }
 
-            downloadButton.Enabled = true;            
+            DisableUI(false);            
+        }
+
+        private void DisableUI(bool disable)
+        {
+            downloadButton.Enabled = !disable;
+            connectButton.Enabled = !disable;
+            syncButton.Enabled = !disable;
+
+            if (connectButton.Text == "Disconnect")
+            {
+                deviceButton.Enabled = false;
+                settingsButton.Enabled = false;
+            }
+            else
+            {
+                deviceButton.Enabled = !disable;
+                settingsButton.Enabled = !disable;
+            }
+
+            if (disable)
+            {
+                Cursor = Cursors.WaitCursor;
+            }
+            else
+            {
+                Cursor = Cursors.Default;
+            }
         }
     }
 }
