@@ -211,5 +211,23 @@ namespace SwipeReader
         {
 
         }
+
+        private void downloadButton_Click(object sender, EventArgs e)
+        {            
+            downloadButton.Enabled = false;
+
+            foreach (var d in devicesList)
+            {
+                d.Value.DownloadAttendance();
+            }
+
+            if (connectButton.Text == "Connect")
+            {
+                connectButton_Click(null, null);  //will disconnect the devices
+                connectButton_Click(null, null);  //will reconnect them
+            }
+
+            downloadButton.Enabled = true;            
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace SwipeReader
 {
@@ -62,27 +63,70 @@ namespace SwipeReader
             cardReader.Disconnect();
         }
 
+
+        /// <summary>
+        /// Get all the attendance records in the device and insert them in the database.
+        /// </summary>
+        public bool DownloadAttendance()
+        {
+            int _machineNumber = 1;
+            int _verifyMode = 0;
+            int _inOutMode = 0;
+            int _year = 0;
+            int _month = 0;
+            int _day = 0;
+            int _hour = 0;
+            int _minute = 0;
+            int _second = 0;
+            int _workcode = 0;
+            string _enrollNumber = "";
+
+            if (cardReader.ReadAllGLogData(_machineNumber))
+            {
+                _owner.DisplayTransaction(_ipAddress + ": Downloading attendance records.");
+                _owner.tablesList[_ipAddress].Connect();
+
+                while (cardReader.SSR_GetGeneralLogData(_machineNumber, out _enrollNumber, 
+                    out _verifyMode, out _inOutMode, out _year, out _month, out _day, out _hour, 
+                    out _minute, out _second, ref _workcode))
+                {
+                    String attendance_time = String.Format("{0}-{1}-{2} {3}:{4}:{5}",
+                        _year.ToString(), _month.ToString(), _day.ToString(), _hour.ToString(),
+                        _minute.ToString(), _second.ToString());
+
+                    _owner.tablesList[_ipAddress].SaveAttendanceRecord(
+                        _enrollNumber, attendance_time, _inOutMode, _verifyMode);
+                }
+
+                cardReader.ClearGLog(_machineNumber);
+
+                _owner.tablesList[_ipAddress].Disconnect();
+                _owner.DisplayTransaction(_ipAddress + ": Downloading complete.");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         /// <summary>
         /// Occurs when a user enters a new attendance record using fingerprint or card
         /// </summary>
         private void cardReader_OnAttTransactionEx(object sender, Axzkemkeeper._IZKEMEvents_OnAttTransactionExEvent e)
         {
-            //user_id = e.enrollNumber
-            //time_stamp
-            //attendance_type = e.attState
-            //location_id = 
-            //authentication_type_id = e.verifyMethod -> Verification mode. 0: password, 1: fingerprint, 2: card
-            //whereabout_id
-
             //display the transaction in the main form
             _owner.DisplayTransaction(string.Format("{0}: Transaction by user {1}. AttState: {2}",
                 _ipAddress, e.enrollNumber, e.attState));
 
             //save the transaction in attendance table
-            var time = String.Format("{0}-{1}-{2} {3}:{4}:{5}", 
+            var time = String.Format("{0}-{1}-{2} {3}:{4}:{5}",
                 e.year, e.month, e.day, e.hour, e.minute, e.second);
-            
-            _owner.tablesList[_ipAddress].SaveAttendanceRecord(e.enrollNumber, time, e.attState, e.verifyMethod);
+
+            _owner.tablesList[_ipAddress].Connect();
+            _owner.tablesList[_ipAddress].SaveAttendanceRecord(
+                e.enrollNumber, time, e.attState, e.verifyMethod);
+            _owner.tablesList[_ipAddress].Disconnect();
         }
 
         private void cardReader_OnAttTransaction(object sender, Axzkemkeeper._IZKEMEvents_OnAttTransactionEvent e)

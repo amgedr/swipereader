@@ -27,12 +27,13 @@ namespace SwipeReader
             //    connection = new MySqlConnection(Properties.Settings.Default.EmployeesDB);
         }
 
+        /// <summary>
+        /// Save a single attendance record.
+        /// </summary>
         public void SaveAttendanceRecord(string userId, string timeStamp, int attendanceType, int authenticationType)
         {
             try
             {
-                connection.Open();
-
                 //labor machines use employee_id instead of user_id. Because its easier for
                 //HR to locate them in their excel sheets and hardcopies
                 if (this.forLabors)
@@ -46,21 +47,29 @@ namespace SwipeReader
 
                 //user_id, time_stamp, attendance_type, location_id, authentication_type_id, whereabout_id
                 string sql = String.Format(
-                    "INSERT INTO `attendance_log` (`user_id`, `time_stamp`, `attendance_type`, " +
-                    "`location_id` ,`authentication_type_id` ,`whereabout_id`)VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', NULL);",
+                    "INSERT IGNORE INTO `attendance_log` (`user_id`, `time_stamp`, `attendance_type`, " +
+                    "`location_id` ,`authentication_type_id` ,`whereabout_id`) " + 
+                    "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', NULL);",
                     userId, timeStamp, attendanceType, locationId, authenticationType);
-                
+
                 MySqlCommand cmd = new MySqlCommand(sql, connection);
                 cmd.ExecuteNonQuery();
             }
+            //catch (MySqlException) { }
             catch (Exception)
             {
                 throw;
             }
-            finally
-            {
-                connection.Close();
-            }
+        }
+
+        public void Connect()
+        {
+            connection.Open();
+        }
+
+        public void Disconnect()
+        {
+            connection.Close();
         }
     }
 }
