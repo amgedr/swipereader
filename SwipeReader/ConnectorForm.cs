@@ -174,5 +174,35 @@ namespace SwipeReader
             //occurs when disconnecting from the device
             //MessageBox.Show("OnDisConnected");
         }
+
+        private void cardReader_OnWriteCard(object sender, Axzkemkeeper._IZKEMEvents_OnWriteCardEvent e)
+        {
+            //MessageBox.Show("OnWriteCard");
+        }
+
+        private void cardReader_OnEnrollFinger(object sender, Axzkemkeeper._IZKEMEvents_OnEnrollFingerEvent e)
+        {
+            //MessageBox.Show("OnEnrollFinger");
+        }
+
+        private void cardReader_OnEnrollFingerEx(object sender, Axzkemkeeper._IZKEMEvents_OnEnrollFingerExEvent e)
+        {
+            //MessageBox.Show("OnEnrollFingerEx");
+        }
+
+        private void cardReader_OnNewUser(object sender, Axzkemkeeper._IZKEMEvents_OnNewUserEvent e)
+        {
+            //MessageBox.Show("OnNewUser");
+        }
+
+        private void cardReader_OnFingerFeature(object sender, Axzkemkeeper._IZKEMEvents_OnFingerFeatureEvent e)
+        {
+            //MessageBox.Show("OnFingerFeature");
+        }
+
+        private void cardReader_OnDoor(object sender, Axzkemkeeper._IZKEMEvents_OnDoorEvent e)
+        {
+            //MessageBox.Show("OnDoor");
+        }
     }
 }

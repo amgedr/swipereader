@@ -341,7 +341,18 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td>{3BCA51EB-9C6A-43AE-A471-C0FC98406022}</td><td>SystemFolder</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{633B823D-9461-4F79-9FD9-1FCDDE05073F}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>SwipeReader.Primary_output</td><td>{42291FE8-FE3F-41EC-805C-24239E43C549}</td><td>INSTALLDIR</td><td>2</td><td/><td>swipereader.primary_output</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>commpro.dll1</td><td>{468EB204-6DB2-4114-AC73-A3B4A7423347}</td><td>SystemFolder</td><td>2</td><td/><td>commpro.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>comms.dll1</td><td>{159200D9-73BB-4ECE-9A19-D947F043DF08}</td><td>SystemFolder</td><td>2</td><td/><td>comms.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>plce.dll1</td><td>{DB29D7C8-24B0-4B32-8E19-C315154A6635}</td><td>SystemFolder</td><td>2</td><td/><td>plce.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>rscagent.dll1</td><td>{C6DC98AE-1D21-425C-8765-2832C01F61AC}</td><td>SystemFolder</td><td>2</td><td/><td>rscagent.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>rscomm.dll1</td><td>{2DC21BF0-6DE2-4067-BA60-14C3032ED217}</td><td>SystemFolder</td><td>2</td><td/><td>rscomm.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>tcpcomm.dll1</td><td>{281DEB0A-90BF-4CF2-BF1F-8D097E60FCFD}</td><td>SystemFolder</td><td>2</td><td/><td>tcpcomm.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>usbcomm.dll1</td><td>{75DAB667-D763-4352-8500-C3CA452E87BC}</td><td>SystemFolder</td><td>2</td><td/><td>usbcomm.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>zkemkeeper.dll1</td><td>{C0ACB82D-0C28-40BC-B71C-0F4DA11DA5DA}</td><td>SystemFolder</td><td>2</td><td/><td>zkemkeeper.dll1</td><td>20</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>zkemsdk.dll1</td><td>{30C8379D-D3D3-4415-88C3-A7CB35FBC8DA}</td><td>SystemFolder</td><td>2</td><td/><td>zkemsdk.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -1051,6 +1062,7 @@
 	<table name="CreateFolder">
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>SystemFolder</td><td>ISX_DEFAULTCOMPONENT</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -1861,7 +1873,18 @@
 	<table name="FeatureComponents">
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
 		<row><td>AlwaysInstall</td><td>SwipeReader.Primary_output</td></row>
+		<row><td>AlwaysInstall</td><td>commpro.dll1</td></row>
+		<row><td>AlwaysInstall</td><td>comms.dll1</td></row>
+		<row><td>AlwaysInstall</td><td>plce.dll1</td></row>
+		<row><td>AlwaysInstall</td><td>rscagent.dll1</td></row>
+		<row><td>AlwaysInstall</td><td>rscomm.dll1</td></row>
+		<row><td>AlwaysInstall</td><td>tcpcomm.dll1</td></row>
+		<row><td>AlwaysInstall</td><td>usbcomm.dll1</td></row>
+		<row><td>AlwaysInstall</td><td>zkemkeeper.dll1</td></row>
+		<row><td>AlwaysInstall</td><td>zkemsdk.dll1</td></row>
 	</table>
 
 	<table name="File">
@@ -1876,7 +1899,17 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
+		<row><td>commpro.dll1</td><td>commpro.dll1</td><td>commpro.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\commpro.dll</td><td>1</td><td/></row>
+		<row><td>comms.dll1</td><td>comms.dll1</td><td>comms.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\comms.dll</td><td>1</td><td/></row>
+		<row><td>plce.dll1</td><td>plce.dll1</td><td>plce.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\plce.dll</td><td>1</td><td/></row>
+		<row><td>rscagent.dll1</td><td>rscagent.dll1</td><td>rscagent.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\rscagent.dll</td><td>1</td><td/></row>
+		<row><td>rscomm.dll1</td><td>rscomm.dll1</td><td>rscomm.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\rscomm.dll</td><td>1</td><td/></row>
 		<row><td>swipereader.primary_output</td><td>SwipeReader.Primary_output</td><td>SwipeReader.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SwipeReader&gt;|Built</td><td>3</td><td/></row>
+		<row><td>swipereader.sdf</td><td>ISX_DEFAULTCOMPONENT1</td><td>SWIPER~1.SDF|SwipeReader.sdf</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\bin\Release\SwipeReader.sdf</td><td>1</td><td/></row>
+		<row><td>tcpcomm.dll1</td><td>tcpcomm.dll1</td><td>tcpcomm.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\tcpcomm.dll</td><td>1</td><td/></row>
+		<row><td>usbcomm.dll1</td><td>usbcomm.dll1</td><td>usbcomm.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\usbcomm.dll</td><td>1</td><td/></row>
+		<row><td>zkemkeeper.dll1</td><td>zkemkeeper.dll1</td><td>ZKEMKE~1.DLL|zkemkeeper.dll</td><td>0</td><td/><td/><td>0</td><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\zkemkeeper.dll</td><td>1</td><td/></row>
+		<row><td>zkemsdk.dll1</td><td>zkemsdk.dll1</td><td>zkemsdk.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\zkemsdk.dll</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2134,7 +2167,18 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
+		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_F56BE3E1_EA74_4AF5_986D_4BB055A96C04_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_7C1DAE28_1276_429F_BA74_16D70B824E64_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>SwipeReader.Primary_output</td><td/><td/><td>_0A2C957F_98A2_481A_B68B_7C2717B1D4C6_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>commpro.dll1</td><td/><td/><td>_F8809CBC_BEC4_40D6_828D_4199BBF74F7A_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>comms.dll1</td><td/><td/><td>_DD37188D_F87C_480B_B6E4_6209C7CA5793_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>plce.dll1</td><td/><td/><td>_B2F3FF0F_7503_4F3C_B0A5_C90E20784983_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>rscagent.dll1</td><td/><td/><td>_15F48810_FB64_455E_B144_2A54EAD79CE9_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>rscomm.dll1</td><td/><td/><td>_D99E86ED_16A9_4D6D_A18E_556871855A5D_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>tcpcomm.dll1</td><td/><td/><td>_14FF437D_3483_405F_91DA_37DD744B9383_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>usbcomm.dll1</td><td/><td/><td>_9D542EB6_C0B7_4D3E_90A5_A2A6ABBA669F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>zkemkeeper.dll1</td><td/><td/><td>_CD1CB9FE_7A24_432D_B4C3_2212F7198FC1_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>zkemsdk.dll1</td><td/><td/><td>_B35DCFB6_A442_4B04_A079_6A226B8D4DBF_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -2730,6 +2774,7 @@
 		<col def="I2">Order</col>
 		<col def="I2">ISSetupLocation</col>
 		<col def="S255">ISReleaseFlags</col>
+		<row><td>_1088643E_BE9F_4B02_BC6F_E8438EDCA30A_</td><td>Microsoft .NET Framework 4.0 Full (Web Download).prq</td><td/><td/><td/></row>
 	</table>
 
 	<table name="ISSetupType">
@@ -2763,7 +2808,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>SEIDCO General Contracting</td><td>0</td><td/><td>1679907594</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>SEIDCO General Contracting</td><td>0</td><td/><td>-1130297876</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>1679940330</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>1679940330</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION40CLIENT</td><td>1033</td><td>Microsoft .NET Framework 4.0 Client Package or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>1679930186</td></row>
@@ -3576,7 +3621,7 @@
 		<row><td>IDS_PROGMSG_XML_ROLLBACK_FILES</td><td>1033</td><td>Rolling back XML file changes...</td><td>0</td><td/><td>1679940330</td></row>
 		<row><td>IDS_PROGMSG_XML_UPDATE_FILE</td><td>1033</td><td>Updating XML file %s...</td><td>0</td><td/><td>1679940330</td></row>
 		<row><td>IDS_SETUPEXE_EXPIRE_MSG</td><td>1033</td><td>This setup works until %s. The setup will now exit.</td><td>0</td><td/><td>1679940330</td></row>
-		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td>Launch |Built</td><td>0</td><td/><td>1679899562</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td>SwipeReader</td><td>0</td><td/><td>-1130252820</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>1033</td><td>From the list of servers below, select the database server you would like to target.</td><td>0</td><td/><td>1679940330</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>1033</td><td>From the list of catalog names below, select the database catalog you would like to target.</td><td>0</td><td/><td>1679940330</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>1033</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>1679940330</td></row>
@@ -3866,11 +3911,11 @@
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>1679940330</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>1679940330</td></row>
 		<row><td>ID_STRING1</td><td>1033</td><td/><td>0</td><td/><td>1679942378</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>http://www.seidco.com</td><td>0</td><td/><td>1679942410</td></row>
-		<row><td>ID_STRING3</td><td>1033</td><td>SEIDCO General Contracting</td><td>0</td><td/><td>1679907594</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>http://www.SEIDCOGeneralContracting.com</td><td>0</td><td/><td>-1130297876</td></row>
+		<row><td>ID_STRING3</td><td>1033</td><td>SEIDCO General Contracting</td><td>0</td><td/><td>-1130297876</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>Launch |Built</td><td>0</td><td/><td>1679905706</td></row>
 		<row><td>ID_STRING5</td><td>1033</td><td>Hosam AlKhaldi</td><td>0</td><td/><td>1679885386</td></row>
-		<row><td>ID_STRING6</td><td>1033</td><td>http://www.seidco.com</td><td>0</td><td/><td>1679887434</td></row>
+		<row><td>ID_STRING6</td><td>1033</td><td>http://www.SEIDCOGeneralContracting.com</td><td>0</td><td/><td>-1130297876</td></row>
 		<row><td>ID_STRING7</td><td>1033</td><td>024444221</td><td>0</td><td/><td>1679916106</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>1679940330</td></row>
 	</table>
@@ -3878,6 +3923,8 @@
 	<table name="ISSwidtagProperty">
 		<col key="yes" def="s72">Name</col>
 		<col def="s0">Value</col>
+		<row><td>SfwCreatorName</td><td>Amgad Suliman</td></row>
+		<row><td>SfwLicensorName</td><td>Amgad Suliman</td></row>
 		<row><td>UniqueId</td><td>E6EBEE3E-3B75-422E-9DB4-3A738207B679</td></row>
 	</table>
 
@@ -3980,6 +4027,12 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
+		<row><td>_93E6CA38A322456B866C655D7701B7C0.exe</td><td/><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\obj\Release\SwipeReader.exe</td><td>0</td></row>
+		<row><td>_BA6B86397DB84F438B2D8F26A774D1FB.exe</td><td/><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\obj\Release\SwipeReader.exe</td><td>0</td></row>
+		<row><td>_BE0259002EF14157B3C789E64099CD05.exe</td><td/><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\obj\Release\SwipeReader.exe</td><td>0</td></row>
+		<row><td>_BEDCEE21CC2B4E36806BB524C24786CE.exe</td><td/><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\obj\Release\SwipeReader.exe</td><td>0</td></row>
+		<row><td>_E36CC1FDF8D74BE2B42D76D579622678.exe</td><td/><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\obj\Release\SwipeReader.exe</td><td>0</td></row>
+		<row><td>_E9F2953AF6C3489CA83862E67C668386.exe</td><td/><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\obj\Release\SwipeReader.exe</td><td>0</td></row>
 	</table>
 
 	<table name="IniFile">
@@ -4098,7 +4151,7 @@
 UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 			</td></row>
 		<row><td>DefaultProductConfiguration</td><td>Express</td></row>
-		<row><td>EnableSwidtag</td><td>1</td></row>
+		<row><td>EnableSwidtag</td><td>0</td></row>
 		<row><td>ISCompilerOption_CompileBeforeBuild</td><td>1</td></row>
 		<row><td>ISCompilerOption_Debug</td><td>0</td></row>
 		<row><td>ISCompilerOption_IncludePath</td><td/></row>
@@ -4112,7 +4165,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>ISTheme</td><td>InstallShield Blue.theme</td></row>
 		<row><td>ISUSLock</td><td>{59C3489D-E734-425D-81C1-52AF0D00F816}</td></row>
 		<row><td>ISUSSignature</td><td>{CC775845-C953-4D62-BA15-CDD69ACDF549}</td></row>
-		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewISToday,viewAppV,viewRealSetupDesign,viewSetupDesign,viewSetupTypes,viewUpgradePaths,viewAppFiles,viewUI,viewSystemSearch</td></row>
+		<row><td>ISVisitedViews</td><td>viewAssistant,viewProject,viewISToday,viewAppV,viewRealSetupDesign,viewSetupDesign,viewSetupTypes,viewUpgradePaths,viewAppFiles,viewUI,viewSystemSearch,viewComponentServices,viewObjects,viewCustomActions,viewRelease,viewSupportFiles</td></row>
 		<row><td>Limited</td><td>1</td></row>
 		<row><td>LockPermissionMode</td><td>1</td></row>
 		<row><td>MsiExecCmdLineOptions</td><td/></row>

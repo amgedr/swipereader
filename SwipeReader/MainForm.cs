@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Axzkemkeeper;
 using System.Diagnostics;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace SwipeReader
 {
@@ -32,14 +33,15 @@ namespace SwipeReader
         public MainForm()
         {
             InitializeComponent();
-            
-            DisplayTransaction("Attendance synchronization at: " + syncHour.ToString() + 
+
+            DisplayTransaction("Attendance synchronization at: " + syncHour.ToString() +
                 ":" + syncMinute.ToString());
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            GetDevicesList();            
+            GetDevicesList();
+            DisableUI(false);
         }
 
         private void GetDevicesList()
@@ -120,7 +122,7 @@ namespace SwipeReader
                         row.Cells[2].Value = "Connected";
                         DisplayTransaction("Connected to " + ip);
                         devicesList.Add(ip, connector);
-                        tablesList.Add(ip, 
+                        tablesList.Add(ip,
                             new AttendanceTable((bool)row.Cells[1].Value, (int)row.Cells[3].Value));
                     }
                     else
@@ -166,7 +168,7 @@ namespace SwipeReader
 
                 DisplayTransaction("Attendance synchronization at: " + syncHour.ToString() +
                     ":" + syncMinute.ToString());
-            }            
+            }
         }
 
         private void deviceButton_Click(object sender, EventArgs e)
@@ -178,7 +180,22 @@ namespace SwipeReader
 
         private void syncButton_Click(object sender, EventArgs e)
         {
+            DisableUI(true);
+            
+            foreach (var d in devicesList)
+            {
+                d.Value.cardReader.EnableDevice(1, false);
 
+                UserSyncForm syncForm = new UserSyncForm(tablesList[d.Value.IpAddress], d.Value);
+                if (syncForm.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                    DisplayTransaction("Synchronization of " + d.Value.IpAddress + " complete.");
+                else
+                    DisplayTransaction("Synchronization of " + d.Value.IpAddress + " cancelled.");
+
+                d.Value.cardReader.EnableDevice(1, true);
+            }
+
+            DisableUI(false);
         }
 
         private void recordCountToolStripMenuItem_Click(object sender, EventArgs e)
@@ -207,27 +224,16 @@ namespace SwipeReader
             }
         }
 
-        private void dataSyncTimer_Tick(object sender, EventArgs e)
-        {
-
-        }
-
         private void downloadButton_Click(object sender, EventArgs e)
         {
-            DisableUI(true);            
+            DisableUI(true);
 
             foreach (var d in devicesList)
             {
                 d.Value.DownloadAttendance();
             }
 
-            if (connectButton.Text == "Connect")
-            {
-                connectButton_Click(null, null);  //will disconnect the devices
-                connectButton_Click(null, null);  //will reconnect them agian
-            }
-
-            DisableUI(false);            
+            DisableUI(false);
         }
 
         private void DisableUI(bool disable)
@@ -240,11 +246,16 @@ namespace SwipeReader
             {
                 deviceButton.Enabled = false;
                 settingsButton.Enabled = false;
+                downloadButton.Enabled = true;
+                syncButton.Enabled = true;
             }
             else
             {
                 deviceButton.Enabled = !disable;
                 settingsButton.Enabled = !disable;
+
+                downloadButton.Enabled = false;
+                syncButton.Enabled = false;
             }
 
             if (disable)

@@ -49,7 +49,6 @@
             this.statusTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataSyncTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.devicesDataGridView)).BeginInit();
             this.devicesContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -245,12 +244,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Transactions:";
             // 
-            // dataSyncTimer
-            // 
-            this.dataSyncTimer.Enabled = true;
-            this.dataSyncTimer.Interval = 3000;
-            this.dataSyncTimer.Tick += new System.EventHandler(this.dataSyncTimer_Tick);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,6 +260,7 @@
             this.Controls.Add(this.connectButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SwipeReader";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -295,7 +289,6 @@
         private System.Windows.Forms.ContextMenuStrip devicesContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem recordCountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sDKVersionToolStripMenuItem;
-        private System.Windows.Forms.Timer dataSyncTimer;
         private System.Windows.Forms.DataGridViewTextBoxColumn ipAddressColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isLaborDeviceColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusColumn;
