@@ -238,33 +238,36 @@ namespace SwipeReader
 
         private void DisableUI(bool disable)
         {
-            downloadButton.Enabled = !disable;
-            connectButton.Enabled = !disable;
-            syncButton.Enabled = !disable;
-
-            if (connectButton.Text == "Disconnect")
-            {
-                deviceButton.Enabled = false;
-                settingsButton.Enabled = false;
-                downloadButton.Enabled = true;
-                syncButton.Enabled = true;
-            }
-            else
-            {
-                deviceButton.Enabled = !disable;
-                settingsButton.Enabled = !disable;
-
-                downloadButton.Enabled = false;
-                syncButton.Enabled = false;
-            }
-
             if (disable)
             {
                 Cursor = Cursors.WaitCursor;
+
+                connectButton.Enabled = false;
+                deviceButton.Enabled = false;
+                settingsButton.Enabled = false;
+                downloadButton.Enabled = false;
+                syncButton.Enabled = false;
             }
             else
             {
                 Cursor = Cursors.Default;
+
+                connectButton.Enabled = true;
+
+                if (connectButton.Text == "Disconnect")
+                {
+                    deviceButton.Enabled = false;
+                    settingsButton.Enabled = false;
+                    downloadButton.Enabled = true;
+                    syncButton.Enabled = true;
+                }
+                else
+                {
+                    deviceButton.Enabled = true;
+                    settingsButton.Enabled = true;
+                    downloadButton.Enabled = false;
+                    syncButton.Enabled = false;
+                }
             }
         }
     }
