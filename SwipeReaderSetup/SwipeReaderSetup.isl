@@ -343,7 +343,9 @@
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td>{3BCA51EB-9C6A-43AE-A471-C0FC98406022}</td><td>SystemFolder</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td>{633B823D-9461-4F79-9FD9-1FCDDE05073F}</td><td>INSTALLDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>ISX_DEFAULTCOMPONENT2</td><td>{F6D35410-A90D-4BB8-8B46-9A237392A8A2}</td><td>DATABASEDIR</td><td>2</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>SwipeReader.Primary_output</td><td>{42291FE8-FE3F-41EC-805C-24239E43C549}</td><td>INSTALLDIR</td><td>2</td><td/><td>swipereader.primary_output</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>System.Data.SqlServerCe.dll</td><td>{B0D239EE-063B-4F30-9B77-E4FA9A9699B3}</td><td>SystemFolder</td><td>2</td><td/><td>system.data.sqlserverce.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>commpro.dll1</td><td>{468EB204-6DB2-4114-AC73-A3B4A7423347}</td><td>SystemFolder</td><td>2</td><td/><td>commpro.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>comms.dll1</td><td>{159200D9-73BB-4ECE-9A19-D947F043DF08}</td><td>SystemFolder</td><td>2</td><td/><td>comms.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>plce.dll1</td><td>{DB29D7C8-24B0-4B32-8E19-C315154A6635}</td><td>SystemFolder</td><td>2</td><td/><td>plce.dll1</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1875,7 +1877,9 @@
 		<col key="yes" def="s72">Component_</col>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT</td></row>
 		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT1</td></row>
+		<row><td>AlwaysInstall</td><td>ISX_DEFAULTCOMPONENT2</td></row>
 		<row><td>AlwaysInstall</td><td>SwipeReader.Primary_output</td></row>
+		<row><td>AlwaysInstall</td><td>System.Data.SqlServerCe.dll</td></row>
 		<row><td>AlwaysInstall</td><td>commpro.dll1</td></row>
 		<row><td>AlwaysInstall</td><td>comms.dll1</td></row>
 		<row><td>AlwaysInstall</td><td>plce.dll1</td></row>
@@ -1901,11 +1905,14 @@
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>commpro.dll1</td><td>commpro.dll1</td><td>commpro.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\commpro.dll</td><td>1</td><td/></row>
 		<row><td>comms.dll1</td><td>comms.dll1</td><td>comms.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\comms.dll</td><td>1</td><td/></row>
+		<row><td>devices.dat</td><td>ISX_DEFAULTCOMPONENT1</td><td>devices.dat</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\devices.dat</td><td>1</td><td/></row>
 		<row><td>plce.dll1</td><td>plce.dll1</td><td>plce.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\plce.dll</td><td>1</td><td/></row>
 		<row><td>rscagent.dll1</td><td>rscagent.dll1</td><td>rscagent.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\rscagent.dll</td><td>1</td><td/></row>
 		<row><td>rscomm.dll1</td><td>rscomm.dll1</td><td>rscomm.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\rscomm.dll</td><td>1</td><td/></row>
 		<row><td>swipereader.primary_output</td><td>SwipeReader.Primary_output</td><td>SwipeReader.Primary output</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SwipeReader&gt;|Built</td><td>3</td><td/></row>
 		<row><td>swipereader.sdf</td><td>ISX_DEFAULTCOMPONENT1</td><td>SWIPER~1.SDF|SwipeReader.sdf</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\bin\Release\SwipeReader.sdf</td><td>1</td><td/></row>
+		<row><td>swipereader.sdf1</td><td>ISX_DEFAULTCOMPONENT2</td><td>SWIPER~1.SDF|SwipeReader.sdf</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\bin\Release\SwipeReader.sdf</td><td>1</td><td/></row>
+		<row><td>system.data.sqlserverce.dll</td><td>System.Data.SqlServerCe.dll</td><td>SYSTEM~1.DLL|System.Data.SqlServerCe.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Program Files (x86)\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll</td><td>1</td><td/></row>
 		<row><td>tcpcomm.dll1</td><td>tcpcomm.dll1</td><td>tcpcomm.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\tcpcomm.dll</td><td>1</td><td/></row>
 		<row><td>usbcomm.dll1</td><td>usbcomm.dll1</td><td>usbcomm.dll</td><td>0</td><td/><td/><td/><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\usbcomm.dll</td><td>1</td><td/></row>
 		<row><td>zkemkeeper.dll1</td><td>zkemkeeper.dll1</td><td>ZKEMKE~1.DLL|zkemkeeper.dll</td><td>0</td><td/><td/><td>0</td><td>1</td><td>C:\Users\Admin\Downloads\Libraries\zkemsdk\zkemsdk\zkemkeeper.dll</td><td>1</td><td/></row>
@@ -2169,7 +2176,9 @@
 		<col def="S0">Miscellaneous</col>
 		<row><td>ISX_DEFAULTCOMPONENT</td><td/><td/><td>_F56BE3E1_EA74_4AF5_986D_4BB055A96C04_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISX_DEFAULTCOMPONENT1</td><td/><td/><td>_7C1DAE28_1276_429F_BA74_16D70B824E64_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>ISX_DEFAULTCOMPONENT2</td><td/><td/><td>_5450BD4E_8C34_4CF9_817F_13CB4A71A2A7_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>SwipeReader.Primary_output</td><td/><td/><td>_0A2C957F_98A2_481A_B68B_7C2717B1D4C6_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>System.Data.SqlServerCe.dll</td><td/><td/><td>_09DA2F30_F46F_4750_B4D2_6ABC0FF89601_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>commpro.dll1</td><td/><td/><td>_F8809CBC_BEC4_40D6_828D_4199BBF74F7A_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>comms.dll1</td><td/><td/><td>_DD37188D_F87C_480B_B6E4_6209C7CA5793_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>plce.dll1</td><td/><td/><td>_B2F3FF0F_7503_4F3C_B0A5_C90E20784983_FILTER</td><td/><td/><td/><td/></row>
@@ -4027,7 +4036,11 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProductFolder&gt;\redist\Language Independent\OS Independent\setupicon.ico</td><td>0</td></row>
+		<row><td>_040514BB6EC14529B4BEF883D0EB94F3.exe</td><td/><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\obj\Release\SwipeReader.exe</td><td>0</td></row>
+		<row><td>_3F124FB5C6E44402B4A3B00A22DE5D55.exe</td><td/><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\obj\Release\SwipeReader.exe</td><td>0</td></row>
+		<row><td>_51181F377BE04F0EB03D9F89B5EBD2BD.exe</td><td/><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\obj\Release\SwipeReader.exe</td><td>0</td></row>
 		<row><td>_93E6CA38A322456B866C655D7701B7C0.exe</td><td/><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\obj\Release\SwipeReader.exe</td><td>0</td></row>
+		<row><td>_998300E0D0A14B618D449985C0842AE7.exe</td><td/><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\obj\Release\SwipeReader.exe</td><td>0</td></row>
 		<row><td>_BA6B86397DB84F438B2D8F26A774D1FB.exe</td><td/><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\obj\Release\SwipeReader.exe</td><td>0</td></row>
 		<row><td>_BE0259002EF14157B3C789E64099CD05.exe</td><td/><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\obj\Release\SwipeReader.exe</td><td>0</td></row>
 		<row><td>_BEDCEE21CC2B4E36806BB524C24786CE.exe</td><td/><td>C:\Users\Admin\Documents\Visual Studio 2012\Projects\SwipeReader\SwipeReader\obj\Release\SwipeReader.exe</td><td>0</td></row>

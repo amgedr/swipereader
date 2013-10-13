@@ -24,10 +24,10 @@ namespace SwipeReader
             connection = new MySqlConnection(
                 "server=localhost; database=seidco_attendance; uid=root; password=;");
 
-            //if (forLabors)
-            //    connection = new MySqlConnection(Properties.Settings.Default.LaborsDB);
-            //else
-            //    connection = new MySqlConnection(Properties.Settings.Default.EmployeesDB);
+            if (forLabors)
+                connection = new MySqlConnection(Properties.Settings.Default.LaborsDB);
+            else
+                connection = new MySqlConnection(Properties.Settings.Default.EmployeesDB);
         }
 
         /// <summary>

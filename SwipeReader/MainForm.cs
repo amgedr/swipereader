@@ -46,21 +46,35 @@ namespace SwipeReader
 
         private void GetDevicesList()
         {
-            SwipeReaderDataSetTableAdapters.DevicesTableAdapter adapter =
-                new SwipeReaderDataSetTableAdapters.DevicesTableAdapter();
-            var devicesTable = new SwipeReaderDataSet.DevicesDataTable();
+            string[] ips = System.IO.File.ReadAllLines(Application.StartupPath+"\\devices.dat");
 
-            adapter.Fill(devicesTable);
             devicesDataGridView.Rows.Clear();
 
-            //Fill devicesGridView manually
-            foreach (SwipeReaderDataSet.DevicesRow dev in devicesTable.Rows)
+            foreach (string ip in ips)
             {
-                devicesDataGridView.Rows.Add(dev.IpAddress, dev.IsLaborDevice, "", dev.LocationId);
+                string[] fields = ip.Split(',');
+                devicesDataGridView.Rows.Add(fields[0], Boolean.Parse(fields[1]), "", fields[2]);
             }
 
             //deselect the first row
             devicesDataGridView.Rows[0].Selected = false;
+
+
+            //SwipeReaderDataSetTableAdapters.DevicesTableAdapter adapter =
+            //    new SwipeReaderDataSetTableAdapters.DevicesTableAdapter();
+            //var devicesTable = new SwipeReaderDataSet.DevicesDataTable();
+
+            //adapter.Fill(devicesTable);
+            //devicesDataGridView.Rows.Clear();
+
+            ////Fill devicesGridView manually
+            //foreach (SwipeReaderDataSet.DevicesRow dev in devicesTable.Rows)
+            //{
+            //    devicesDataGridView.Rows.Add(dev.IpAddress, dev.IsLaborDevice, "", dev.LocationId);
+            //}
+
+            ////deselect the first row
+            //devicesDataGridView.Rows[0].Selected = false;
         }
 
         public void DisplayTransaction(string transaction)
@@ -123,7 +137,7 @@ namespace SwipeReader
                         DisplayTransaction("Connected to " + ip);
                         devicesList.Add(ip, connector);
                         tablesList.Add(ip,
-                            new AttendanceTable((bool)row.Cells[1].Value, (int)row.Cells[3].Value));
+                            new AttendanceTable((bool)row.Cells[1].Value, Convert.ToInt32(row.Cells[3].Value)));
                     }
                     else
                     {
@@ -181,7 +195,7 @@ namespace SwipeReader
         private void syncButton_Click(object sender, EventArgs e)
         {
             DisableUI(true);
-            
+
             foreach (var d in devicesList)
             {
                 d.Value.cardReader.EnableDevice(1, false);
