@@ -41,7 +41,7 @@ namespace SwipeReader
         private void MainForm_Load(object sender, EventArgs e)
         {
             GetDevicesList();
-            DisableUI(false);
+            connectButton_Click(null, null);
         }
 
         private void GetDevicesList()
